@@ -1,17 +1,17 @@
 {% set name = "polygon-geohasher" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 5c9f8788fa38df1606c7bd9e85fce636c8520a19a675c106ee387c0f613697ef
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz"
+  sha256: 3c7eb95e3ee85028bf2337a17a3c61ca3088d588b57752bb2bf3b5c67690a14e
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
